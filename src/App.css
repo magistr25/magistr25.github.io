@@ -1,6 +1,6 @@
 .app-wrapper {
   display: grid;
-  width: 1200px;
+  width: auto;
 
   grid-template-areas:
   'h h'

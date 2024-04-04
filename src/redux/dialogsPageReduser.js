@@ -26,15 +26,14 @@ let initialState = {
 }
 
 export const dialogsPageReduser = (state = initialState, action) => {
-    let stateCopy;
+
     switch (action.type) {
         case SEND_MESSAGE:
             let body = state.newMessageBody;
         return {
             ...state,
-            newMessageBody: '',
-            messages: [...state.messages, {id:6, message: body}]
-
+             messages: [...state.messages, {id:6, message: body}],
+            newMessageBody: ''
         }
 
         case UPDATE_NEW_MESSAGE_BODY:return {
