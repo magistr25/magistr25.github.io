@@ -1,5 +1,5 @@
 import {followAC, unfollowAC, setUsersAC} from '../../redux/usersPageReduser';
-import UsersC from "./Users";
+import UsersC from "./UsersC";
 import {connect} from "react-redux";
 
 
