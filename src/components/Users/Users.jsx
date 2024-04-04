@@ -5,18 +5,22 @@ import userPhoto from '../../assets/images/user_png.webp'
 
 let Users = (props) => {
 
-    if (props.users.length === 0) {
+    let getUsers = () => {
 
-        axios
-            .get('https://social-network.samuraijs.com/api/1.0/users')
-            .then(response => {
+        if (props.users.length === 0) {
 
-                props.setUsers(response.data.items)
-            })
+            axios
+                .get('https://social-network.samuraijs.com/api/1.0/users')
+                .then(response => {
 
+                    props.setUsers(response.data.items)
+                })
+
+        }
     }
     return (
         <div>
+            <button onClick={getUsers}>getUsers</button>
             {
                 props.users.map(u => <div key={u.id}>
                     <div>
