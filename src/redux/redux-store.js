@@ -1,8 +1,8 @@
-import {combineReducers, legacy_createStore as createStore } from "redux";
-import {profilePageReduser} from "./profilePageReduser";
-import {dialogsPageReduser} from "./dialogsPageReduser";
-import {sidebarReduser} from "./sidebarReduser";
-import {usersPageReduser} from "./usersPageReduser";
+import {combineReducers, legacy_createStore as createStore } from 'redux';
+import {profilePageReduser} from './profilePageReduser';
+import {dialogsPageReduser} from './dialogsPageReduser';
+import {sidebarReduser} from './sidebarReduser';
+import {usersPageReduser} from './usersPageReduser';
 
 
 

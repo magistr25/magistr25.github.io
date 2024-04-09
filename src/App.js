@@ -1,14 +1,14 @@
 import React from "react";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Header/Header";
-import Profile from "./components/Profile/Profile";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import {Route, Routes} from "react-router-dom";
-import Music from "./components/Music/Music";
-import News from "./components/News/News";
-import Settings from "./components/Settings/Settings";
-import UsersContainer from "./components/Users/UsersContainer";
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
+import {Route, Routes} from 'react-router-dom';
+import Music from './components/Music/Music';
+import News from './components/News/News';
+import Settings from './components/Settings/Settings';
+import MyUsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -29,7 +29,7 @@ const App = () => {
                         <Route path='/music' element = {<Music/>}/>
                         <Route path='/news' element = {<News/>}/>
 
-                        <Route path='/users' element = {<UsersContainer/>}/>
+                        <Route path='/users' element = {<MyUsersContainer/>}/>
                         <Route path='/settings' element = {<Settings/>}/>
                     </Routes>
                 </div>
