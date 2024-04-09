@@ -99,6 +99,5 @@ const mapStateToProps = (state) => {
 
 
 
-const MyUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersContainer)
+export const MyUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching})(UsersContainer)
 
-export default MyUsersContainer
