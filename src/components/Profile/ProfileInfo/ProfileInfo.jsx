@@ -13,6 +13,11 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.small}/>
+                <div>{props.profile.aboutMe}</div>
+                <div>Мои соцсети: {Object.keys(props.profile.contacts).map(key => (
+                    <div key={key}>{props.profile.contacts[key]}</div>
+                ))}
+                </div>
                 ava + description
             </div>
 
@@ -21,4 +26,4 @@ const ProfileInfo = (props) => {
     )
 }
 
-export  default ProfileInfo
+export default ProfileInfo
