@@ -8,9 +8,12 @@ import {withRouter} from "react-router-dom";
 
 export class ProfileContainer extends React.Component {
     componentDidMount() {
-        debugger
+        let userID = this.props.match.params.userId;
+        if (!userID) {
+            userID = 2;
+        }
         axios
-            .get(`https://social-network.samuraijs.com/api/1.0/profile/3`)
+            .get(`https://social-network.samuraijs.com/api/1.0/profile/${userID}`)
 
 
             .then(response => {
@@ -32,11 +35,12 @@ export class ProfileContainer extends React.Component {
 
 }
 
+let WithUrlDataContainerComponent = withRouter(ProfileContainer);
+
+
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile
 
 })
-
-let WithUrlDataContainerComponent = withRouter(ProfileContainer);
 
 export default connect(mapStateToProps, {setUserProfile})(WithUrlDataContainerComponent);
