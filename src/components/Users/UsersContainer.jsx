@@ -8,7 +8,7 @@ import {
     setCurrentPage,
     setTotalUsersCount,
     toggleIsFetching,
-} from '../../redux/usersPageReduser';
+} from '../../redux/usersPageReducer';
 import {connect} from 'react-redux';
 import {Preloader} from "../common/preloader/Preloader";
 

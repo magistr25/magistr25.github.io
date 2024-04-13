@@ -8,3 +8,8 @@
     height: 80%;
     margin: 5px auto 5px 10px;
 }
+
+.loginBlock{
+    float: right;
+    padding: 30px;
+}

@@ -9,12 +9,14 @@ import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import {MyUsersContainer} from './components/Users/UsersContainer';
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 const App = () => {
     return (
         <div className='app-wrapper'>
-            <Header/>
+
+            <HeaderContainer/>
             <Navbar/>
             <div className='app-wrapper-content'>
 

@@ -1,7 +1,7 @@
 import {type} from "@testing-library/user-event/dist/type";
 import {profilePageReduser} from "./profilePageReduser";
 import {dialogsPageReduser} from "./dialogsPageReduser";
-import {sidebarReduser} from "./sidebarReduser";
+import {sidebarReduser} from "./sidebarReducer";
 
 
 

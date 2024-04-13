@@ -12,7 +12,7 @@ let initialState = {
     currentPage: 1,
     isFetching: true,
 }
-export const usersPageReduser = (state = initialState, action) => {
+export const usersPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
             return {
