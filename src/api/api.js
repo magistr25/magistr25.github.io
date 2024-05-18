@@ -16,14 +16,22 @@ export const usersAPI = {
                 return response.data
             })
     },
-    // getUsers2(currentPage = 1, pageSize = 10){
-    // return instance.get(`follow?page=${currentPage}&count=${pageSize}`)
-    //     .then(response => {
-    //         return response.data
-    //     })
-
-
+    follow(userID) {
+        return instance.post(`follow/${userID}`)
+    },
+    unfollow(userID) {
+        return instance.delete(`follow/${userID}`)
+    },
+    getProfile(userID) {
+        return instance.get(`profile/${userID}`);
+    },
 }
+
+export const authAPI = {
+    me() {
+        return instance.get(`auth/me`);
+    }
+};
 
 
 
