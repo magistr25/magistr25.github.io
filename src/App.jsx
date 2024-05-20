@@ -7,7 +7,7 @@ import {Route} from 'react-router-dom';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import {MyUsersContainer} from './components/Users/UsersContainer';
+import MyUsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import {Login} from "./components/Login/Login";

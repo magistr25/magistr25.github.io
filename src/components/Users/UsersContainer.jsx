@@ -9,6 +9,8 @@ import {
 } from '../../redux/usersPageReducer';
 import {connect} from 'react-redux';
 import {Preloader} from "../common/preloader/Preloader";
+import {compose} from "redux";
+import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 
 
 
@@ -88,18 +90,28 @@ const mapStateToProps = (state) => {
 }
 
 
-export const MyUsersContainer = connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowingInProgress,
-    getUsers
-})(UsersContainer)
+// export const MyUsersContainer = connect(mapStateToProps, {
+//     follow,
+//     unfollow,
+//     setCurrentPage,
+//     toggleFollowingInProgress,
+//     getUsers
+// })(UsersContainer)
+//
+// // вместо mapDispatchToProps передаём объект
+// // {   follow: follow,
+// //     unfollow: unfollow,
+// //     setCurrentPage: setCurrentPage,
+// //     toggleFollowingInProgress: toggleFollowingInProgress,
+// //     getUsers: getUsers
+// // }
 
-// вместо mapDispatchToProps переда объект
-// {   follow: follow,
-//     unfollow: unfollow,
-//     setCurrentPage: setCurrentPage,
-//     toggleFollowingInProgress: toggleFollowingInProgress,
-//     getUsers: getUsers
-// }
+export default compose(
+    WithAuthRedirect,
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        setCurrentPage,
+        toggleFollowingInProgress,
+        getUsers
+    }))(UsersContainer)
