@@ -16,7 +16,7 @@ let initialState = {
     profile: null
 
 }
-export const profilePageReduser = (state = initialState, action) => {
+export function profilePageReduser (state = initialState, action) {
     switch (action.type) {
 
         case ADD_POST: {

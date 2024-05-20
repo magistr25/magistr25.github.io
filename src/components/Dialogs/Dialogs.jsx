@@ -2,12 +2,7 @@ import React from "react";
 import s from "./Dialogs.module.css"
 import DialogItem from './DialogItem/DialogItem'
 import Message from "./Message/Message";
-import {type} from "@testing-library/user-event/dist/type";
-import {
-     sendMessageActionCreator, updateNewMessageBodyActionCreator,
-
-
-} from "../../redux/dialogsPageReduser";
+import {Redirect} from "react-router-dom";
 
 
 const Dialogs = (props) => {
@@ -26,9 +21,10 @@ const Dialogs = (props) => {
     let onNewMessageChange=(e)=>{
         let body = e.target.value;
         props.updateNewMessageBody(body);
-
-
     }
+
+    if(!props.isAuth) return <Redirect to={'/login'} />;
+
 
     return (
         <div className={s.dialogs}>
@@ -46,7 +42,6 @@ const Dialogs = (props) => {
             <div>
                 <div>
                     <textarea value={props.dialogsPage.newMessageBody} onChange={onNewMessageChange} placeholder='Enter your message' ></textarea>
-
                 </div>
                 <div>
                     <button onClick={onSendMessageClick}>Send</button>

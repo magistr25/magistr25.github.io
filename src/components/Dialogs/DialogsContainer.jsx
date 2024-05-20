@@ -11,6 +11,10 @@ import {
 } from "../../redux/dialogsPageReduser";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
+import React from "react";
+import {ProfileContainer} from "../Profile/ProfileContainer";
+import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 
 
 
@@ -37,6 +41,7 @@ import {connect} from "react-redux";
 let mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage,
+
     }
 
 };
@@ -52,5 +57,7 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+let AuthRedirectComponent = WithAuthRedirect(Dialogs)
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent)
 export default DialogsContainer
