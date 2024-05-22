@@ -16,6 +16,7 @@ let initialState = {
     ],
     newPostText: 'it-kamasutra',
     profile: null,
+    status: 'Hello, world!',
 
 }
 
