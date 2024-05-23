@@ -4,15 +4,11 @@
 // import Message from "./Message/Message";
 // import {type} from "@testing-library/user-event/dist/type";
 
-import {
-    sendMessageActionCreator, updateNewMessageBodyActionCreator,
-
-
-} from "../../redux/dialogsPageReduser";
+import React from "react";
+import {sendMessageActionCreator} from "../../redux/dialogsPageReduser";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
-import React from "react";
 import {ProfileContainer} from "../Profile/ProfileContainer";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
@@ -48,17 +44,14 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessageBody: (body) => {
-            dispatch(updateNewMessageBodyActionCreator(body))
-        },
-        sendMessage: () => {
-            dispatch(sendMessageActionCreator())
+       sendMessage: (newMessageBody) => {
+            dispatch(sendMessageActionCreator(newMessageBody))
         }
     }
 }
 
 export default compose(
-    connect (mapStateToProps, mapDispatchToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     WithAuthRedirect
 )(Dialogs)
 
