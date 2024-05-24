@@ -5,13 +5,14 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {loginThunkCreator} from "../../redux/authReducer";
 import {Redirect} from "react-router-dom";
+import styles from "./../common/formsControls/formsControls.module.css";
 
 
 const LoginForm = (props) => {
     return (
             <form onSubmit={props.handleSubmit}>
                 <div>
-                    <Field placeholder={'Email'} name={'email'} type={'email'} validate={[required]} component={Input} />
+                    <Field placeholder={'Email'} name={'email'}  validate={[required]} component={Input} />
                 </div>
                 <div>
                     <Field placeholder={'Password'} name={'password'} type={'password'} validate={[required]} component={Input} />
@@ -19,6 +20,10 @@ const LoginForm = (props) => {
                 <div>
                     <Field type={"checkbox"} name={'rememberMe'} validate={[required]} component={Input} /> remember me
                 </div>
+
+                { props.error && <div className={styles.formSummaryError}>
+                    {props.error}
+                </div>}
                 <div>
                     <button>Login</button>
                 </div>
