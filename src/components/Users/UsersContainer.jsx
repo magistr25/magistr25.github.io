@@ -10,7 +10,7 @@ import {
 import {connect} from 'react-redux';
 import {Preloader} from "../common/preloader/Preloader";
 import {compose} from "redux";
-import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
+
 
 
 
@@ -61,7 +61,8 @@ const mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress
+        followingInProgress: state.usersPage.followingInProgress,
+
 
     }
 
@@ -107,7 +108,7 @@ const mapStateToProps = (state) => {
 // // }
 
 export default compose(
-    WithAuthRedirect,
+
     connect(mapStateToProps, {
         follow,
         unfollow,
