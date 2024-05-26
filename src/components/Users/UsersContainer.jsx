@@ -11,12 +11,12 @@ import {connect} from 'react-redux';
 import {Preloader} from "../common/preloader/Preloader";
 import {compose} from "redux";
 import {
-
+    getUsers,
     getCurrentPage,
     getFollowingInProgress,
     getIsFetching,
     getPageSize,
-    getTotalUsersCount, getUsers
+    getTotalUsersCount
 } from "../../redux/users-selectors";
 
 
