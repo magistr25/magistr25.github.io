@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, PureComponent} from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
@@ -26,10 +26,10 @@ let AddNewPostForm = (props) => {
 
 let SuperAddNewPostForm = reduxForm({form: 'ProfileAddNewPostForm'})(AddNewPostForm)
 
-class MyPosts extends Component {
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return nextProps != this.props && ! nextState != this.state;
-    }
+class MyPosts extends PureComponent {
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    //     return nextProps != this.props && ! nextState != this.state;
+    // }
 
     render() {
 
