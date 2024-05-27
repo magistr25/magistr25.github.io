@@ -1,4 +1,4 @@
-import React, {Component, PureComponent} from "react";
+import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
@@ -26,32 +26,27 @@ let AddNewPostForm = (props) => {
 
 let SuperAddNewPostForm = reduxForm({form: 'ProfileAddNewPostForm'})(AddNewPostForm)
 
-class MyPosts extends PureComponent {
-    // shouldComponentUpdate(nextProps, nextState, nextContext) {
-    //     return nextProps != this.props && ! nextState != this.state;
-    // }
+const MyPosts = React.memo(props => {
 
-    render() {
+    let postsElements =
+        props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
-        let postsElements =
-            this.props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
-
-        let onAddPost = (values) => {
-            this.props.addPost(values.newPostText)
-        }
-
-
-        return (
-
-            < div className={s.postsBlock}>
-                <h3>My posts</h3>
-                <SuperAddNewPostForm onSubmit={onAddPost}/>
-                <div className={s.posts}>
-                    {postsElements}
-
-                </div>
-            </div>)
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText)
     }
-}
+
+
+    return (
+
+        < div className={s.postsBlock}>
+            <h3>My posts</h3>
+            <SuperAddNewPostForm onSubmit={onAddPost}/>
+            <div className={s.posts}>
+                {postsElements}
+
+            </div>
+        </div>
+    )
+});
 
 export default MyPosts
