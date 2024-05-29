@@ -1,7 +1,7 @@
 import {authAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
-const SET_USER_DATA = "SET_USER_DATA";
+const SET_USER_DATA = "swith-network/auth/SET_USER_DATA";
 
 const initialState = {
     id: null,
@@ -27,18 +27,25 @@ export const setAuthUserData = (id, email, login, isAuth) => ({
     data: {id, email, login, isAuth},
 });
 
-export const getAuthUserData = () => (dispatch) => {
-    authAPI.me().then((response) => {
+// export const getAuthUserData = () => (dispatch) => {
+//     authAPI.me().then((response) => {
+//         if (response.data.resultCode === 0) {
+//             let {id, email, login} = response.data.data;
+//             dispatch(setAuthUserData(id, email, login, true));
+//         }
+//     });
+// };
+
+export const getAuthUserData = () => async (dispatch) => {
+    let response = await  authAPI.me()
         if (response.data.resultCode === 0) {
             let {id, email, login} = response.data.data;
             dispatch(setAuthUserData(id, email, login, true));
         }
-    });
+
 };
 
 export const loginThunkCreator = (email, password, rememberMe) => (dispatch) => {
-
-
     authAPI.login(email, password, rememberMe).then((response) => {
         if (response.data.resultCode === 0) {
             dispatch(getAuthUserData());

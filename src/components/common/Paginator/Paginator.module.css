@@ -1,0 +1,11 @@
+.pages{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+.selectedPage{
+    font-weight: bold;
+
+}
