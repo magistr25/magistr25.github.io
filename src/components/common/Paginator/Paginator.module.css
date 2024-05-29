@@ -1,11 +1,35 @@
-.pages{
-    font-size: 25px;
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page {
+    margin: 0 5px;
+    padding: 5px 10px;
     cursor: pointer;
+    user-select: none;
 }
 
-
-
-.selectedPage{
+.selectedPage {
     font-weight: bold;
-
+    color: white;
+    background-color: #007bff;
+    border-radius: 3px;
 }
+
+.button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.button:hover {
+    background-color: #e0e0e0;
+}
+
