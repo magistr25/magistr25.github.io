@@ -3,17 +3,18 @@ import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import { Route, withRouter } from 'react-router-dom';
+import {BrowserRouter, Route, withRouter} from 'react-router-dom';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import MyUsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Login from "./components/Login/Login";
-import { connect } from "react-redux";
+import {connect, Provider} from "react-redux";
 import { initializeApp } from "./redux/app-reducer";
 import { compose } from "redux";
 import {Preloader} from "./components/common/preloader/Preloader";
+import {store} from "./redux/redux-store";
 
 class App extends React.Component {
     componentDidMount() {
@@ -47,7 +48,19 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 });
 
-export default compose(
+let AppContainer = compose(
     withRouter,
     connect(mapStateToProps, { initializeApp })
 )(App);
+
+let SwitchApp = (props) => {
+    return (
+        <BrowserRouter>
+        <React.StrictMode>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </React.StrictMode>
+    </BrowserRouter>
+    )}
+export default SwitchApp
