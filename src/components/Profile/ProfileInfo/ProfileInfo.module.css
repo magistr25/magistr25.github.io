@@ -6,3 +6,11 @@
     width: 100%;
     height: 300px;
 }
+.mainPhoto{
+    max-width: 200px;
+    max-height: 200px;
+
+}
+div>.mainPhoto {
+border-radius: 50%;
+}

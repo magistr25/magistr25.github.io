@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import {BrowserRouter, Route, Switch, withRouter} from 'react-router-dom';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
@@ -35,8 +35,10 @@ class App extends React.Component {
                 <Navbar />
                 <div className='app-wrapper-content'>
                     <Suspense fallback={<div>Loading...</div>}>
-                        <Route path='/dialogs' render={() => <DialogsContainer />} />
-                        <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
+                        <Switch>
+                            <Route path='/dialogs' render={() => <DialogsContainer />} />
+                            <Route path='/profile/:userId?' render={() => <ProfileContainer props={this.props} />} />
+                        </Switch>
                     </Suspense>
                     <Route path='/users' render={() => <MyUsersContainer />} />
                     <Route path='/music' render={() => <Music />} />
