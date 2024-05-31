@@ -12,8 +12,6 @@ const instance = axios.create({
 });
 
 
-
-
 // Экспортируем API методы для работы с пользователями
 export const usersAPI = {
     getUsers(currentPage = 1, pageSize = 10) {
@@ -64,10 +62,17 @@ export const authAPI = {
     me() {
         return instance.get(`auth/me`);
     },
-    login(email, password, rememberMe= false) {
-        return instance.post(`auth/login`, {email, password, rememberMe});
+    login(email, password, rememberMe= false, captcha=null) {
+        return instance.post(`auth/login`, {email, password, rememberMe, captcha});
     },
     logout() {
         return instance.delete(`auth/login`);
+    }
+};
+
+// captcha
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get(`security/get-captcha-url`);
     }
 };
