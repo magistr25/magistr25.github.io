@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react_project.github.io/static/css/main.0e2770d3.css",
+    "main.js": "/react_project.github.io/static/js/main.ccda2f6d.js",
+    "static/js/453.159d8a3d.chunk.js": "/react_project.github.io/static/js/453.159d8a3d.chunk.js",
+    "static/css/679.067ec648.chunk.css": "/react_project.github.io/static/css/679.067ec648.chunk.css",
+    "static/js/679.179a98b9.chunk.js": "/react_project.github.io/static/js/679.179a98b9.chunk.js",
+    "static/css/858.fa230934.chunk.css": "/react_project.github.io/static/css/858.fa230934.chunk.css",
+    "static/js/858.31b56d9b.chunk.js": "/react_project.github.io/static/js/858.31b56d9b.chunk.js",
+    "static/media/logo.png": "/react_project.github.io/static/media/logo.c96fc56fc8e05b074368.png",
+    "static/media/30.gif": "/react_project.github.io/static/media/30.39ee264200f824b08f99.gif",
+    "static/media/user_png.webp": "/react_project.github.io/static/media/user_png.3577fced6e5ece19f1ca.webp",
+    "index.html": "/react_project.github.io/index.html",
+    "main.0e2770d3.css.map": "/react_project.github.io/static/css/main.0e2770d3.css.map",
+    "main.ccda2f6d.js.map": "/react_project.github.io/static/js/main.ccda2f6d.js.map",
+    "453.159d8a3d.chunk.js.map": "/react_project.github.io/static/js/453.159d8a3d.chunk.js.map",
+    "679.067ec648.chunk.css.map": "/react_project.github.io/static/css/679.067ec648.chunk.css.map",
+    "679.179a98b9.chunk.js.map": "/react_project.github.io/static/js/679.179a98b9.chunk.js.map",
+    "858.fa230934.chunk.css.map": "/react_project.github.io/static/css/858.fa230934.chunk.css.map",
+    "858.31b56d9b.chunk.js.map": "/react_project.github.io/static/js/858.31b56d9b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e2770d3.css",
+    "static/js/main.ccda2f6d.js"
+  ]
+}
